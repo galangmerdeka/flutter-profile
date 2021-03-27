@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_profile_app/widget/categories_discover.dart';
 import 'package:my_profile_app/widget/text_discover_bold.dart';
@@ -31,20 +32,14 @@ class Discover extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        ListView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: 5,
-          itemBuilder: (ctx, i) => Container(
-            margin: EdgeInsets.only(
-              left: 20,
-            ),
-            height: 100,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                CategoriesDiscover(),
-              ],
-            ),
+        // CategoriesDiscover(),
+        Container(
+          alignment: Alignment.centerLeft,
+          height: MediaQuery.of(context).size.height * 0.23,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 5,
+            itemBuilder: (ctx, i) => CategoriesDiscover(),
           ),
         ),
       ],
